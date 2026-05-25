@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "928225864534",
+    "project_id": "duckya-4e4d3",
+    "storage_bucket": "duckya-4e4d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928225864534:android:35be16bbb5c6c99d4884f7",
+        "android_client_info": {
+          "package_name": "no.duckya.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi0wL9zOHYEu488cDFnMyxPL5blmks6Qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

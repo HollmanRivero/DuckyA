@@ -1,0 +1,31 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+local.properties
+captures/
+.cxx/
+
+# Android build outputs
+app/build/
+app/release/
+app/debug/
+
+# Keystore & signing — never commit
+*.jks
+*.keystore
+keystore.properties
+
+# Firebase — google-services.json contains your project config; commit only if repo is private
+# google-services.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
