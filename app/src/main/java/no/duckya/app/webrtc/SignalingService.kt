@@ -8,10 +8,10 @@ import org.webrtc.SessionDescription
 
 /**
  * Firestore-backed signaling. Document layout:
- *   calls/{callId}              — { caller, callee, type, status, offer? }
- *   calls/{callId}/answer       — { sdp, type }
- *   calls/{callId}/callerIce/*  — caller ICE candidates
- *   calls/{callId}/calleeIce/*  — callee ICE candidates
+ *   calls/{callId}                       — { caller, callee, type, status, offer? }
+ *   calls/{callId}/answer                — { sdp, type }
+ *   calls/{callId}/callerIce/{candId}    — caller ICE candidates
+ *   calls/{callId}/calleeIce/{candId}    — callee ICE candidates
  */
 class SignalingService(private val firestore: FirebaseFirestore) {
 

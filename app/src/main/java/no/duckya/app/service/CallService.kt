@@ -9,13 +9,11 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.lifecycle.LifecycleService
-import dagger.hilt.android.AndroidEntryPoint
 import no.duckya.app.DuckyApp
 import no.duckya.app.MainActivity
 import no.duckya.app.R
 
 /** Foreground service that keeps an ongoing call alive. */
-@AndroidEntryPoint
 class CallService : LifecycleService() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

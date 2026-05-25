@@ -70,7 +70,3 @@ fun AudioRecorderButton(
         Icon(if (recording) Icons.Filled.Stop else Icons.Filled.Mic, contentDescription = "Spille inn lyd")
     }
 }
-
-private val com.google.accompanist.permissions.PermissionStatus.isGranted: Boolean
-    @OptIn(ExperimentalPermissionsApi::class)
-    get() = this is com.google.accompanist.permissions.PermissionStatus.Granted

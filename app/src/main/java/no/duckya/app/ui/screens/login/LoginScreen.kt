@@ -1,6 +1,8 @@
 package no.duckya.app.ui.screens.login
 
-import androidx.activity.compose.LocalActivity
+import android.app.Activity
+import android.content.Context
+import android.content.ContextWrapper
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -8,6 +10,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -26,6 +29,15 @@ class LoginViewModel @Inject constructor(
     val state: StateFlow<AuthState> = authRepository.state
 }
 
+private fun Context.findActivity(): Activity? {
+    var ctx: Context? = this
+    while (ctx is ContextWrapper) {
+        if (ctx is Activity) return ctx
+        ctx = ctx.baseContext
+    }
+    return null
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
@@ -33,7 +45,7 @@ fun LoginScreen(
     vm: LoginViewModel = hiltViewModel()
 ) {
     val state by vm.state.collectAsState()
-    val activity = LocalActivity.current
+    val activity = LocalContext.current.findActivity()
 
     var phone by remember { mutableStateOf("+47") }
     var code by remember { mutableStateOf("") }

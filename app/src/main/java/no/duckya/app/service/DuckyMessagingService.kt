@@ -9,16 +9,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import dagger.hilt.android.AndroidEntryPoint
 import no.duckya.app.DuckyApp
 import no.duckya.app.MainActivity
 import no.duckya.app.R
-import javax.inject.Inject
 
-@AndroidEntryPoint
 class DuckyMessagingService : FirebaseMessagingService() {
 
-    @Inject lateinit var firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
 
     override fun onNewToken(token: String) {
         super.onNewToken(token)
